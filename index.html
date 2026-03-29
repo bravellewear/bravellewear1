@@ -27,17 +27,22 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 .hero h1 {font-size:48px; margin:10px 0;}
 .hero p {opacity:0.8;}
 .hero button {margin-top:20px; padding:12px 25px; border:none; background:white; color:black; font-weight:bold; border-radius:8px; cursor:pointer;}
-.product img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  background-color: #000; /* vagy fehér */
 
-}img {
-  width: 100% !important;
-  height: 250px !important;
-  object-fit: cover !important;
+/* --- SOLD felirat piros --- */
+.sold-overlay {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size:50px;
+  font-weight:bold;
+  color:red;
+  pointer-events:none;
 }
+/* --- VÉGE --- */
+
+.product img {width: 100%; height: 250px; object-fit: contain; background-color: #000;}
+img {width: 100% !important; height: 250px !important; object-fit: cover !important;}
 </style>
 </head>
 <body>
@@ -51,7 +56,6 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 
 <div class="hero">
 <div class="hero-content">
-
 <h1 data-text-hu="ÚJ DROP" data-text-en="NEW DROP">ÚJ DROP</h1>
 <p data-text-hu="Minden ruhából csak 1 DB VAN!" data-text-en="Only 1 piece of each item!">Minden ruhából csak 1 DB VAN!</p>
 <button data-text-hu="VÁSÁROLJ MOST!" data-text-en="SHOP NOW!" onclick="scrollToProducts()">VÁSÁROLJ MOST!</button>
@@ -64,11 +68,13 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 <div class="filters">
 <button onclick="filterCategory('all')" class="active" data-text-hu="Összes" data-text-en="All">Összes</button>
 <button onclick="filterCategory('Puloverek')" data-text-hu="Pulóverek" data-text-en="Sweaters">Pulóverek</button>
+<button onclick="filterCategory('Polok')" data-text-hu="Pólók" data-text-en="Polos">Pólók</button>
 <button onclick="filterCategory('Sapkak')" data-text-hu="Sapkák" data-text-en="Caps">Sapkák</button>
 <button onclick="filterCategory('Szettek')" data-text-hu="Szettek" data-text-en="Sets">Szettek</button>
 <button onclick="filterCategory('Nadragok')" data-text-hu="Nadrágok" data-text-en="Pants">Nadrágok</button>
 <button onclick="filterCategory('Mezek')" data-text-hu="Mezek" data-text-en="Jerseys">Mezek</button>
 <button onclick="filterCategory('Cipok')" data-text-hu="Cipők" data-text-en="Shoes">Cipők</button>
+<button onclick="filterCategory('Sold')" data-text-hu="Sold" data-text-en="Sold">Sold</button>
 </div>
 
 <div class="products">
@@ -84,6 +90,26 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 <span class="badge">LIMITED</span>
 <img src="https://images1.vinted.net/t/06_01691_iuXt8HY1DCDKtgvabEFRsiBU/f800/1774730945.webp?s=2bdd3fb11855429baa8b989d6dd7e6dafd458fd5">
 <div class="overlay"><h3>Off-White Sweatshirt</h3><p></p></div>
+</div>
+
+<!-- Polók -->
+<div class="card" data-category="Polok" data-title-hu="Gallery Dept T-shirt" data-title-en="Gallery Dept T-shirt" data-desc-hu="Hollywood vibe" data-desc-en="Hollywood vibe" onclick="go('https://www.vinted.com/items/8519471477-t-shirt-gallery-dept-hollywood')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_01a36_GL52997z2qioLiDnwzmT1D6c/f800/1774811842.webp?s=525177ea28a8b45a77c6ecc8210d4cec40f4a288">
+<div class="overlay"><h3>Gallery Dept T-shirt</h3><p>Hollywood vibe</p></div>
+</div>
+
+<!-- Sold termékek -->
+<div class="card" data-category="Sold" data-title-hu="Sprayground Táska" data-title-en="Sprayground Bag" data-desc-hu="Limitált" data-desc-en="Limited" onclick="go('https://www.vinted.hu/items/8374295648-sprayground-taska')">
+<img src="https://images1.vinted.net/t/06_0010f_EtGhmV2UAJ2smhvwcBGxWyc1/f800/1773516205.webp?s=c2678cb096c3544075276a1626240bfdbe6ff58d">
+<div class="sold-overlay">SOLD</div>
+<div class="overlay"><h3>Sprayground Táska</h3><p>Limitált</p></div>
+</div>
+
+<div class="card" data-category="Sold" data-title-hu="Gallery Dept Souvenir T-shirt" data-title-en="Gallery Dept Souvenir T-shirt" data-desc-hu="Limitált" data-desc-en="Limited" onclick="go('https://www.vinted.hu/items/8371264687-gallery-dept-souvenir-t-shirt')">
+<img src="https://images1.vinted.net/t/05_01d85_VTxumvQJ7wFXRdCikkDU8M8w/f800/1773256240.webp?s=ccd70c2dc90604de935e69aca180f6c15c641817">
+<div class="sold-overlay">SOLD</div>
+<div class="overlay"><h3>Gallery Dept Souvenir T-shirt</h3><p>Limitált</p></div>
 </div>
 
 <!-- Mezek -->
