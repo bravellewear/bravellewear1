@@ -1,1 +1,141 @@
-# bravellewear1
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bravellewear</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { margin:0; font-family:'Montserrat',sans-serif; background:#0a0a0a; color:white;}
+header {text-align:center; padding:30px; font-size:32px; font-weight:bold; color:red; cursor:pointer; transition:transform 0.2s,color 0.2s;}
+header:hover {transform:scale(1.1); color:#ff5555;}
+.rating {text-align:center; margin-top:5px; font-size:16px; color:#ffd700;}
+.filters {text-align:center; margin:20px 0;}
+.filters button {background:#111; border:1px solid red; color:white; padding:8px 15px; margin:5px; border-radius:8px; cursor:pointer; transition:0.2s;}
+.filters button:hover, .filters button.active {background:red; color:white;}
+.products {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:20px;}
+.card {position:relative; border-radius:15px; overflow:hidden; cursor:pointer; transition:transform 0.2s;}
+.card:hover {transform:scale(1.03);}
+.card img {width:100%; height:260px; object-fit:cover;}
+.overlay {position:absolute; bottom:0; width:100%; padding:15px; background:linear-gradient(transparent,black);}
+.badge {position:absolute; top:10px; left:10px; background:red; padding:5px 10px; font-size:12px; border-radius:8px;}
+.language-selector {position:fixed; top:15px; right:15px; background:#111; color:white; border:1px solid red; border-radius:8px; padding:5px 10px; cursor:pointer; z-index:1000;}
+.hero {position:relative; height:80vh; background:url('https://i.imgur.com/lMcwLeq.png') center/cover no-repeat; display:flex; align-items:center; justify-content:center; text-align:center;}
+.hero::after {content:""; position:absolute; inset:0; background:rgba(0,0,0,0.6);}
+.hero-content {position:relative; z-index:2;}
+.logo {width:110px; margin-bottom:20px;}
+.hero h1 {font-size:48px; margin:10px 0;}
+.hero p {opacity:0.8;}
+.hero button {margin-top:20px; padding:12px 25px; border:none; background:white; color:black; font-weight:bold; border-radius:8px; cursor:pointer;}
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #000; /* vagy fehér */
+
+}img {
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: cover !important;
+}
+</style>
+</head>
+<body>
+
+<div class="language-selector">
+<select id="languageSelect">
+<option value="hu">Magyar</option>
+<option value="en">English</option>
+</select>
+</div>
+
+<div class="hero">
+<div class="hero-content">
+
+<h1 data-text-hu="ÚJ DROP" data-text-en="NEW DROP">ÚJ DROP</h1>
+<p data-text-hu="Minden ruhából csak 1 DB VAN!" data-text-en="Only 1 piece of each item!">Minden ruhából csak 1 DB VAN!</p>
+<button data-text-hu="VÁSÁROLJ MOST!" data-text-en="SHOP NOW!" onclick="scrollToProducts()">VÁSÁROLJ MOST!</button>
+</div>
+</div>
+
+<header id="header">BRAVELLEWEAR</header>
+<div class="rating" id="rating">10+ elégedett vásárló ⭐⭐⭐⭐⭐</div>
+
+<div class="filters">
+<button onclick="filterCategory('all')" class="active" data-text-hu="Összes" data-text-en="All">Összes</button>
+<button onclick="filterCategory('Puloverek')" data-text-hu="Pulóverek" data-text-en="Sweaters">Pulóverek</button>
+<button onclick="filterCategory('Sapkak')" data-text-hu="Sapkák" data-text-en="Caps">Sapkák</button>
+<button onclick="filterCategory('Szettek')" data-text-hu="Szettek" data-text-en="Sets">Szettek</button>
+<button onclick="filterCategory('Nadragok')" data-text-hu="Nadrágok" data-text-en="Pants">Nadrágok</button>
+<button onclick="filterCategory('Mezek')" data-text-hu="Mezek" data-text-en="Jerseys">Mezek</button>
+<button onclick="filterCategory('Cipok')" data-text-hu="Cipők" data-text-en="Shoes">Cipők</button>
+</div>
+
+<div class="products">
+
+<!-- Pulóverek -->
+<div class="card" data-category="Puloverek" data-title-hu="Ralph Lauren Sweater" data-title-en="Ralph Lauren Sweater" data-desc-hu="Street classic" data-desc-en="Street classic" onclick="go('https://www.vinted.hu/items/8484249688-sweater-ralph-lauren-sport-green')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/01_0191d_BYUEN84oHm56MB31HYrKr1vv/f800/1774639172.webp?s=335447a575c6088b47c8c9449f13182a674410bc">
+<div class="overlay"><h3>Ralph Lauren Sweater</h3><p></p></div>
+</div>
+
+<div class="card" data-category="Puloverek" data-title-hu="Off-White Sweatshirt" data-title-en="Off-White Sweatshirt" data-desc-hu="Luxury drip" data-desc-en="Luxury drip" onclick="go('https://www.vinted.hu/items/8484288729-sweatshirt-off-white-seasonal')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_01691_iuXt8HY1DCDKtgvabEFRsiBU/f800/1774730945.webp?s=2bdd3fb11855429baa8b989d6dd7e6dafd458fd5">
+<div class="overlay"><h3>Off-White Sweatshirt</h3><p></p></div>
+</div>
+
+<!-- Mezek -->
+<div class="card" data-category="Mezek" data-title-hu="Trapstar Jersey" data-title-en="Trapstar Jersey" data-desc-hu="Ritka darab" data-desc-en="Rare piece" onclick="go('https://www.vinted.hu/items/8385258848-trapstar-london-monogram-football-jersey')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_0250c_7bepaYsgdEtQp6aW2PPVujUj/f800/1773515582.webp?s=a91eb3375aa38bcf701e53972986792b632525aa">
+<div class="overlay"><h3>Trapstar Jersey</h3><p></p></div>
+</div>
+
+<!-- Szettek -->
+<div class="card" data-category="Szettek" data-title-hu="Denim Tears Tracksuit" data-title-en="Denim Tears Tracksuit" data-desc-hu="Teljes szett" data-desc-en="Full set" onclick="go('https://www.vinted.hu/items/8371207459-denim-tears-tracksuit')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_021cd_myEZ7oK6sG7xJXPm536kxU3f/f800/1773516049.webp?s=f5231235784aa994bb062e6b269dc038b112c95d">
+<div class="overlay"><h3>Denim Tears Tracksuit</h3><p></p></div>
+</div>
+
+<!-- Nadrágok -->
+<div class="card" data-category="Nadragok" data-title-hu="Denim Tears Pants" data-title-en="Denim Tears Pants" data-desc-hu="Masszív stílus" data-desc-en="Heavy style" onclick="go('https://www.vinted.hu/items/8371240738-denim-tears-pants')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_00f5c_g6acacrBxAaXcRfBsoNQoqMC/f800/1773515696.webp?s=6af74adafc403fe13701a1c1e66a62ecffae6fb5">
+<div class="overlay"><h3>Denim Tears Pants</h3><p></p></div>
+</div>
+
+<!-- Sapkák -->
+<div class="card" data-category="Sapkak" data-title-hu="Corteiz Cap" data-title-en="Corteiz Cap" data-desc-hu="Limitált vibe" data-desc-en="Limited vibe" onclick="go('https://www.vinted.hu/items/8371229179-corteiz-5-star-cap-pink-edition')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/05_0172e_GLRLwzf6q6TmpcVSLMEDJa3n/f800/1773515920.webp?s=2cd093bdf43dc4cde6b357de4ea13d4062cbe517">
+<div class="overlay"><h3>Corteiz Cap</h3><p></p></div>
+</div>
+
+<!-- Cipők -->
+<div class="card" data-category="Cipok" data-title-hu="Nike TN Air Max" data-title-en="Nike TN Air Max" data-desc-hu="Napi flex" data-desc-en="Daily flex" onclick="go('https://www.vinted.hu/items/8375976406-nike-tn-air-max-beige')">
+<span class="badge">LIMITED</span>
+<img src="https://images1.vinted.net/t/06_017df_iUfu9sq9CjPNuDe1LUPoen6c/f800/1773515795.webp?s=2b039b1cbf01400d08b07a32a9d03f919f781175">
+<div class="overlay"><h3>Nike TN Air Max</h3><p></p></div>
+</div>
+
+</div>
+
+<script>
+function go(link){ window.open(link,"_blank"); }
+function scrollToProducts(){ window.scrollTo({top:document.querySelector('.products').offsetTop, behavior:'smooth'});}
+document.getElementById('header').addEventListener('click', function(e){ if(e.target.tagName.toLowerCase()!=='select'){go('https://www.vinted.com/member/177769180');} });
+function filterCategory(cat){ const cards=document.querySelectorAll('.card'); const buttons=document.querySelectorAll('.filters button'); buttons.forEach(btn=>btn.classList.remove('active')); event.target.classList.add('active'); cards.forEach(card=>{ card.style.display=(cat==='all'||card.dataset.category===cat)?'block':'none'; }); }
+document.getElementById('languageSelect').addEventListener('change', function(){
+const lang=this.value;
+document.querySelectorAll('.filters button').forEach(btn=>{btn.innerText=(lang==='hu')?btn.dataset.textHu:btn.dataset.textEn;});
+document.querySelectorAll('.card').forEach(card=>{card.querySelector('h3').innerText=(lang==='hu')?card.dataset.titleHu:card.dataset.titleEn; card.querySelector('p').innerText=(lang==='hu')?card.dataset.descHu:card.dataset.descEn; });
+document.querySelectorAll('.hero-content [data-text-hu]').forEach(el=>{el.innerText=(lang==='hu')?el.dataset.textHu:el.dataset.textEn;});
+document.getElementById('rating').innerText=(lang==='hu')?'10+ elégedett vásárló ⭐⭐⭐⭐⭐':'10+ satisfied customers ⭐⭐⭐⭐⭐';
+});
+</script>
+
+</body>
+</html>
