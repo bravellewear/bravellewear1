@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
+
+<style>
+.rating {
+  color: black;
+}
+</style>
+</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bravellewear</title>
@@ -44,7 +50,7 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 .product img {width: 100%; height: 250px; object-fit: contain; background-color: #000;}
 img {width: 100% !important; height: 250px !important; object-fit: cover !important;}
 </style>
-</head>
+
 <body>
 
 <div class="language-selector">
@@ -56,14 +62,16 @@ img {width: 100% !important; height: 250px !important; object-fit: cover !import
 
 <div class="hero">
 <div class="hero-content">
-<h1 data-text-hu="ÚJ DROP" data-text-en="NEW DROP">ÚJ DROP</h1>
+<h1 data-text-hu="ÚJ DROP" data-text-en="NEMSOKÁRA DROP">DROP SOON</h1>
 <p data-text-hu="Minden ruhából csak 1 DB VAN!" data-text-en="Only 1 piece of each item!">Minden ruhából csak 1 DB VAN!</p>
 <button data-text-hu="VÁSÁROLJ MOST!" data-text-en="SHOP NOW!" onclick="scrollToProducts()">VÁSÁROLJ MOST!</button>
 </div>
 </div>
 
 <header id="header">BRAVELLEWEAR</header>
+<div class= "rating" id="rating"> </picture></div>
 <div class="rating" id="rating">10+ elégedett vásárló ⭐⭐⭐⭐⭐</div>
+
 
 <div class="filters">
 <button onclick="filterCategory('all')" class="active" data-text-hu="Összes" data-text-en="All">Összes</button>
@@ -80,69 +88,71 @@ img {width: 100% !important; height: 250px !important; object-fit: cover !import
 <div class="products">
 
 <!-- Pulóverek -->
-<div class="card" data-category="Puloverek" data-title-hu="Ralph Lauren Sweater" data-title-en="Ralph Lauren Sweater" data-desc-hu="Street classic" data-desc-en="Street classic" onclick="go('https://www.vinted.hu/items/8484249688-sweater-ralph-lauren-sport-green')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Puloverek" data-title-hu="Ralph Lauren Sweater" data-title-en="Ralph Lauren Sweater" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8484249688-sweater-ralph-lauren-sport-green')">
+<span class="badge">10%OFF</span>
 <img src="https://images1.vinted.net/t/01_0191d_BYUEN84oHm56MB31HYrKr1vv/f800/1774639172.webp?s=335447a575c6088b47c8c9449f13182a674410bc">
 <div class="overlay"><h3>Ralph Lauren Sweater</h3><p></p></div>
 </div>
 
-<div class="card" data-category="Puloverek" data-title-hu="Off-White Sweatshirt" data-title-en="Off-White Sweatshirt" data-desc-hu="Luxury drip" data-desc-en="Luxury drip" onclick="go('https://www.vinted.hu/items/8484288729-sweatshirt-off-white-seasonal')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Puloverek" data-title-hu="Off-White Sweatshirt" data-title-en="Off-White Sweatshirt" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8484288729-sweatshirt-off-white-seasonal')">
+<span class="badge">5%OFF</span>
 <img src="https://images1.vinted.net/t/06_01691_iuXt8HY1DCDKtgvabEFRsiBU/f800/1774730945.webp?s=2bdd3fb11855429baa8b989d6dd7e6dafd458fd5">
 <div class="overlay"><h3>Off-White Sweatshirt</h3><p></p></div>
 </div>
 
 <!-- Polók -->
-<div class="card" data-category="Polok" data-title-hu="Gallery Dept T-shirt" data-title-en="Gallery Dept T-shirt" data-desc-hu="Hollywood vibe" data-desc-en="Hollywood vibe" onclick="go('https://www.vinted.com/items/8519471477-t-shirt-gallery-dept-hollywood')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Polok" data-title-hu="Gallery Dept T-shirt" data-title-en="Gallery Dept T-shirt" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.com/items/8519471477-t-shirt-gallery-dept-hollywood')">
+<span class="badge">5%OFF</span>
 <img src="https://images1.vinted.net/t/06_01a36_GL52997z2qioLiDnwzmT1D6c/f800/1774811842.webp?s=525177ea28a8b45a77c6ecc8210d4cec40f4a288">
-<div class="overlay"><h3>Gallery Dept T-shirt</h3><p>Hollywood vibe</p></div>
+<div class="overlay"><h3>Gallery Dept T-shirt</h3><p></p></div>
 </div>
 
 <!-- Sold termékek -->
-<div class="card" data-category="Sold" data-title-hu="Sprayground Táska" data-title-en="Sprayground Bag" data-desc-hu="Limitált" data-desc-en="Limited" onclick="go('https://www.vinted.hu/items/8374295648-sprayground-taska')">
+<div class="card" data-category="Sold" data-title-hu="Sprayground Táska" data-title-en="Sprayground Bag" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8374295648-sprayground-taska')">
 <img src="https://images1.vinted.net/t/06_0010f_EtGhmV2UAJ2smhvwcBGxWyc1/f800/1773516205.webp?s=c2678cb096c3544075276a1626240bfdbe6ff58d">
 <div class="sold-overlay">SOLD</div>
-<div class="overlay"><h3>Sprayground Táska</h3><p>Limitált</p></div>
+<div class="overlay"><h3>Sprayground Táska</h3><p>elfogyott</p></div>
+<span class="badge">SOLD</span>
 </div>
 
-<div class="card" data-category="Sold" data-title-hu="Gallery Dept Souvenir T-shirt" data-title-en="Gallery Dept Souvenir T-shirt" data-desc-hu="Limitált" data-desc-en="Limited" onclick="go('https://www.vinted.hu/items/8371264687-gallery-dept-souvenir-t-shirt')">
+<div class="card" data-category="Sold" data-title-hu="Gallery Dept Souvenir T-shirt" data-title-en="Gallery Dept Souvenir T-shirt" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8371264687-gallery-dept-souvenir-t-shirt')">
 <img src="https://images1.vinted.net/t/05_01d85_VTxumvQJ7wFXRdCikkDU8M8w/f800/1773256240.webp?s=ccd70c2dc90604de935e69aca180f6c15c641817">
 <div class="sold-overlay">SOLD</div>
-<div class="overlay"><h3>Gallery Dept Souvenir T-shirt</h3><p>Limitált</p></div>
+<div class="overlay"><h3>Gallery Dept Souvenir T-shirt</h3><p>elfogyott</p></div>
+<span class="badge">SOLD</span>
 </div>
 
 <!-- Mezek -->
-<div class="card" data-category="Mezek" data-title-hu="Trapstar Jersey" data-title-en="Trapstar Jersey" data-desc-hu="Ritka darab" data-desc-en="Rare piece" onclick="go('https://www.vinted.hu/items/8385258848-trapstar-london-monogram-football-jersey')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Mezek" data-title-hu="Trapstar Jersey" data-title-en="Trapstar Jersey" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8385258848-trapstar-london-monogram-football-jersey')">
+<span class="badge">15%OFF</span>
 <img src="https://images1.vinted.net/t/06_0250c_7bepaYsgdEtQp6aW2PPVujUj/f800/1773515582.webp?s=a91eb3375aa38bcf701e53972986792b632525aa">
 <div class="overlay"><h3>Trapstar Jersey</h3><p></p></div>
 </div>
 
 <!-- Szettek -->
-<div class="card" data-category="Szettek" data-title-hu="Denim Tears Tracksuit" data-title-en="Denim Tears Tracksuit" data-desc-hu="Teljes szett" data-desc-en="Full set" onclick="go('https://www.vinted.hu/items/8371207459-denim-tears-tracksuit')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Szettek" data-title-hu="Denim Tears Tracksuit" data-title-en="Denim Tears Tracksuit" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8371207459-denim-tears-tracksuit')">
+<span class="badge">5%OFF</span>
 <img src="https://images1.vinted.net/t/06_021cd_myEZ7oK6sG7xJXPm536kxU3f/f800/1773516049.webp?s=f5231235784aa994bb062e6b269dc038b112c95d">
 <div class="overlay"><h3>Denim Tears Tracksuit</h3><p></p></div>
 </div>
 
 <!-- Nadrágok -->
-<div class="card" data-category="Nadragok" data-title-hu="Denim Tears Pants" data-title-en="Denim Tears Pants" data-desc-hu="Masszív stílus" data-desc-en="Heavy style" onclick="go('https://www.vinted.hu/items/8371240738-denim-tears-pants')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Nadragok" data-title-hu="Denim Tears Pants" data-title-en="Denim Tears Pants" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8371240738-denim-tears-pants')">
+<span class="badge">10%OFF</span>
 <img src="https://images1.vinted.net/t/06_00f5c_g6acacrBxAaXcRfBsoNQoqMC/f800/1773515696.webp?s=6af74adafc403fe13701a1c1e66a62ecffae6fb5">
 <div class="overlay"><h3>Denim Tears Pants</h3><p></p></div>
 </div>
 
 <!-- Sapkák -->
-<div class="card" data-category="Sapkak" data-title-hu="Corteiz Cap" data-title-en="Corteiz Cap" data-desc-hu="Limitált vibe" data-desc-en="Limited vibe" onclick="go('https://www.vinted.hu/items/8371229179-corteiz-5-star-cap-pink-edition')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Sapkak" data-title-hu="Corteiz Cap" data-title-en="Corteiz Cap" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8371229179-corteiz-5-star-cap-pink-edition')">
+<span class="badge">5%OFF</span>
 <img src="https://images1.vinted.net/t/05_0172e_GLRLwzf6q6TmpcVSLMEDJa3n/f800/1773515920.webp?s=2cd093bdf43dc4cde6b357de4ea13d4062cbe517">
 <div class="overlay"><h3>Corteiz Cap</h3><p></p></div>
 </div>
 
 <!-- Cipők -->
-<div class="card" data-category="Cipok" data-title-hu="Nike TN Air Max" data-title-en="Nike TN Air Max" data-desc-hu="Napi flex" data-desc-en="Daily flex" onclick="go('https://www.vinted.hu/items/8375976406-nike-tn-air-max-beige')">
-<span class="badge">LIMITED</span>
+<div class="card" data-category="Cipok" data-title-hu="Nike TN Air Max" data-title-en="Nike TN Air Max" data-desc-hu="" data-desc-en="" onclick="go('https://www.vinted.hu/items/8375976406-nike-tn-air-max-beige')">
+<span class="badge">LIMITED+5%OFF</span>
 <img src="https://images1.vinted.net/t/06_017df_iUfu9sq9CjPNuDe1LUPoen6c/f800/1773515795.webp?s=2b039b1cbf01400d08b07a32a9d03f919f781175">
 <div class="overlay"><h3>Nike TN Air Max</h3><p></p></div>
 </div>
