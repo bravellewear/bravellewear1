@@ -89,7 +89,21 @@ header:hover {transform:scale(1.1); color:#ff5555;}
 
 <header id="header">BRAVELLEWEAR</header>
 
-<div class="rating" id="rating">10+ elégedett vásárló ⭐⭐⭐⭐⭐</div>
+<div class="rating" id="rating" onclick="goReviews()">
+10+ elégedett vásárló ⭐⭐⭐⭐⭐
+</div>
+<script>function goReviews(){
+  window.open('https://www.vinted.com/member/177769180?tab=feedback', '_blank');
+}</script>
+<style>.rating {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rating:hover {
+  transform: scale(1.05);
+  color: #fff;
+}</style>
 
 <!-- FILTERS -->
 <div class="filters">
